@@ -12,7 +12,7 @@ describe('Submit feedback', () => {
     await expect(submitFeedback.execute({
       type: 'BUG',
       comment: 'example comment',
-      screenshot: 'data:image/png;base64,test.jpg',
+      screenshot: 'data:image/png;base64, test',
     })).resolves.not.toThrow();
 
     expect(createFeedbackSpy).toHaveBeenCalled();
@@ -22,14 +22,14 @@ describe('Submit feedback', () => {
     await expect(submitFeedback.execute({
       type: '',
       comment: 'example comment',
-      screenshot: 'data:image/png;base64,test.jpg',
+      screenshot: 'data:image/png;base64, test',
     })).rejects.toThrow();
   });
   it('should not be able to submit a feedback without comment', async () => {
     await expect(submitFeedback.execute({
       type: 'BUG',
       comment: '',
-      screenshot: 'data:image/png;base64,test.jpg',
+      screenshot: 'data:image/png;base64, test',
     })).rejects.toThrow();
   });
   it('should not be able to submit a feedback with an invalid screenshot format', async () => {
