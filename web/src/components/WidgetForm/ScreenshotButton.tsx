@@ -6,11 +6,13 @@ import { Loading } from "../Loading";
 type ScreenshotButtonProps = {
   screenshot: string | null;
   onScreenshotTook: (screenshot: string | null) => void;
+  isDisabled: boolean;
 }
 
 export function ScreenshotButton({
   screenshot,
-  onScreenshotTook
+  onScreenshotTook,
+  isDisabled,
 }: ScreenshotButtonProps) {
   const [isLoading, setIsLoading] = useState(false)
 
@@ -43,8 +45,9 @@ export function ScreenshotButton({
 
   return (
     <button
+      disabled={isDisabled}
       type="button"
-      className="p-2 bg-zinc-800 rounded-md border-transparent hover:bg-zinc-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500"
+      className="p-2 bg-zinc-800 rounded-md border-transparent hover:bg-zinc-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500  disabled:opacity-50 disabled:cursor-not-allowed"
       onClick={handleTakeScreenshot}
     >
       {isLoading ? <Loading /> : <Camera className="w-6 h-6" />}

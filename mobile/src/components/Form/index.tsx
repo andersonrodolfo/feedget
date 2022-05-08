@@ -18,7 +18,8 @@ import { ScreenshotButton } from '../ScreenshotButton'
 import { theme } from '../../theme';
 import { styles } from './styles';
 import { feedbackTypes } from '../../utils/feedbackTypes'
-import { api } from '../../libs/apis';
+import { api } from '../../services/apis';
+
 
 interface Props {
   feedbackType: FeedbackType;
