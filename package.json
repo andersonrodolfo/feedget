@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "commitlint-config-rocketseat": "^0.0.1",
+    "husky": "^8.0.1"
+  }
+}
