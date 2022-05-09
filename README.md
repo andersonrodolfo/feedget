@@ -17,8 +17,7 @@
   It allows users to send a screenshot and a comment based on three types of feedbacks: "Bug", "Idea" and "Other".
 </p>
 <p>
-  Project originally created from <a href="https://www.rocketseat.com.br/" target="_blank">Rocketseat</a>'s Next Level Week Return event
-  and made by <a href="https://github.com/andersonrodolfo" target="_blank">Anderson Rodolfo</a>.
+  Project originally created from <a href="https://www.rocketseat.com.br/" target="_blank">Rocketseat</a> and made by <a href="https://github.com/andersonrodolfo" target="_blank">Anderson Rodolfo</a>.
 </p>
 
 
@@ -31,7 +30,6 @@
 
 <H2 id="getting-started">:open_book: Getting started</H2>
 
-<h3>Clone this repository:</h3>
 
 ```bash
 # Clone this repository
