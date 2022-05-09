@@ -1,16 +1,17 @@
-import { ArrowLeft } from "phosphor-react";
-import { FormEvent, useState } from "react";
-import { FeedbackType, feedbackTypes } from "@/components/Widget/WidgetForm";
-import { api } from "@/services/api";
-import { CloseButton } from "@/components/CloseButton";
-import { Loading } from "@/components/Loading";
-import { ScreenshotButton } from "@/components/Widget/ScreenshotButton";
+import { ArrowLeft } from 'phosphor-react';
+import { FormEvent, useState } from 'react';
+
+import { CloseButton } from '@/components/CloseButton';
+import { Loading } from '@/components/Loading';
+import { ScreenshotButton } from '@/components/Widget/ScreenshotButton';
+import { FeedbackType, feedbackTypes } from '@/components/Widget/WidgetForm';
+import { api } from '@/services/api';
 
 type FeedbackContentStepProps = {
   feedbackType: FeedbackType;
   onFeedbackRestartRequested: () => void;
   onFeedbackSent: () => void;
-}
+};
 
 export function FeedbackContentStep({
   feedbackType,
@@ -30,8 +31,8 @@ export function FeedbackContentStep({
       type: title,
       comment,
       screenshot,
-    })
-    
+    });
+
     setComment('');
     setScreenshot(null);
     setIsSendingFeedback(false);
@@ -50,7 +51,7 @@ export function FeedbackContentStep({
         </button>
         <span className="text-xl leading-6 flex items-center gap-2">
           <img src={image.source} alt={image.alt} className="w-6 h-6" />
-          {title}        
+          {title}
         </span>
         <CloseButton />
       </header>
@@ -60,7 +61,7 @@ export function FeedbackContentStep({
           className="min-w-[304px] w-full min-h-[112px] text-sm placeholder:text-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 resize-none focus:outline-0 scrollbar-thumb-zinc-700 scrollbar-track-transparent scrollbar-thin disabled:cursor-not-allowed"
           placeholder="Conte com detalhes o que está acontecendo..."
           value={comment}
-          onChange={event => setComment(event.target.value)}
+          onChange={(event) => setComment(event.target.value)}
         />
         <footer className="flex gap-2 mt-2">
           <ScreenshotButton
@@ -78,5 +79,5 @@ export function FeedbackContentStep({
         </footer>
       </form>
     </>
-  )
+  );
 }

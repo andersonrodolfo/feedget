@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 import BugImage from '@/assets/images/bug.svg';
 import IdeaImage from '@/assets/images/idea.svg';
 import ThoughtImage from '@/assets/images/thought.svg';
-import { FeedbackTypeStep } from "@/components/Widget/Steps/FeedbackTypeStep";
-import { FeedbackContentStep } from "@/components/Widget/Steps/FeedbackContentStep";
-import { FeedbackSuccessStep } from "@/components/Widget/Steps/FeedbackSuccessStep";
+import { FeedbackContentStep } from '@/components/Widget/Steps/FeedbackContentStep';
+import { FeedbackSuccessStep } from '@/components/Widget/Steps/FeedbackSuccessStep';
+import { FeedbackTypeStep } from '@/components/Widget/Steps/FeedbackTypeStep';
 
 export const feedbackTypes = {
   BUG: {
@@ -13,23 +13,23 @@ export const feedbackTypes = {
     image: {
       source: BugImage,
       alt: 'Imagem de um inseto',
-    }
+    },
   },
   IDEA: {
     title: 'Ideia',
     image: {
       source: IdeaImage,
       alt: 'Imagem de uma lâmpada',
-    }
+    },
   },
   OTHER: {
     title: 'Outro',
     image: {
       source: ThoughtImage,
       alt: 'Imagem de um balão de pensamento',
-    }
+    },
   },
-}
+};
 
 export type FeedbackType = keyof typeof feedbackTypes;
 
@@ -49,20 +49,21 @@ export function WidgetForm() {
       ) : (
         <>
           {feedbackType && (
-             <FeedbackContentStep
+            <FeedbackContentStep
               feedbackType={feedbackType}
               onFeedbackRestartRequested={handleRestartFeedback}
               onFeedbackSent={() => setFeedbackSent(true)}
             />
           )}
-          {!feedbackType && (
-            <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />
-          )}
+          {!feedbackType && <FeedbackTypeStep onFeedbackTypeChanged={setFeedbackType} />}
         </>
       )}
       <footer className="text-xs text-neutral-400">
-        Feito com <span className="text-brand-500">♥</span> pela <a className="underline underline-offset-2" href="https://rocketseat.com.br">Rocketseat</a>
+        Feito com <span className="text-brand-500">♥</span> pela{' '}
+        <a className="underline underline-offset-2" href="https://rocketseat.com.br">
+          Rocketseat
+        </a>
       </footer>
     </div>
-  )
+  );
 }

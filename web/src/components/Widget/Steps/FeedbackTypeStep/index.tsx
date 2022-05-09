@@ -1,9 +1,9 @@
-import { FeedbackType, feedbackTypes } from "@/components/Widget/WidgetForm";
-import { CloseButton } from "@/components/CloseButton";
+import { CloseButton } from '@/components/CloseButton';
+import { FeedbackType, feedbackTypes } from '@/components/Widget/WidgetForm';
 
 type FeedbackTypeSteProps = {
-  onFeedbackTypeChanged: (type: FeedbackType) => void
-}
+  onFeedbackTypeChanged: (type: FeedbackType) => void;
+};
 
 export function FeedbackTypeStep({ onFeedbackTypeChanged }: FeedbackTypeSteProps) {
   return (
@@ -25,5 +25,5 @@ export function FeedbackTypeStep({ onFeedbackTypeChanged }: FeedbackTypeSteProps
         ))}
       </div>
     </>
-  )
+  );
 }
