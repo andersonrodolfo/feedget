@@ -31,7 +31,6 @@
 
 <H2 id="getting-started">:open_book: Getting started</H2>
 
-<h3>Clone this repository:</h3>
 
 ```bash
 # Clone this repository
