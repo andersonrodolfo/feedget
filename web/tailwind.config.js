@@ -4,9 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        light: '#f6f6f5',
+        dark: '#09090A',
         brand: {
           300: '#996dff',
           500: '#8257e6',
+        },
+        on: {
+          brand: '#ffff',
         },
       },
       dropShadow: {

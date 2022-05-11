@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .background { @apply dark:bg-dark bg-white }
+  .surface-primary { @apply dark:bg-zinc-900 bg-white; }
+  .surface-secondary { @apply dark:bg-zinc-800 bg-zinc-100; }
+  .surface-secondary-hover { @apply dark:bg-zinc-700 bg-zinc-200; }
+  .stroke { @apply dark:bg-zinc-600 bg-zinc-300; }
+  .tooltip { @apply dark:bg-zinc-100 bg-zinc-800; }
+  .text-primary { @apply dark:text-zinc-100 text-zinc-800; }
+  .text-secondary { @apply dark:text-zinc-400 text-zinc-500; }
+  .text-on-tooltip { @apply dark:text-zinc-800 text-zinc-100; }
+  .offset { @apply dark:ring-offset-zinc-900 ring-offset-white; }
+}
+
 body {
-  @apply dark:bg-[#09090a] dark:text-zinc-100 text-zinc-800;
+  @apply background dark:text-zinc-100  text-zinc-800;
 }
