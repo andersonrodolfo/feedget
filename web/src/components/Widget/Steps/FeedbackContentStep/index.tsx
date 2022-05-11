@@ -1,23 +1,29 @@
+import { AxiosError } from 'axios';
 import { ArrowLeft } from 'phosphor-react';
 import { FormEvent, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import { CloseButton } from '@/components/CloseButton';
 import { Loading } from '@/components/Loading';
 import { ScreenshotButton } from '@/components/Widget/ScreenshotButton';
 import { FeedbackType, feedbackTypes } from '@/components/Widget/WidgetForm';
+import { useDarkMode } from '@/hooks/useDarkMode';
 import { api } from '@/services/api';
 
-type FeedbackContentStepProps = {
+interface FeedbackContentStepProps {
   feedbackType: FeedbackType;
   onFeedbackRestartRequested: () => void;
   onFeedbackSent: () => void;
-};
+}
+
+type ErrorMessage = Record<string, unknown>;
 
 export function FeedbackContentStep({
   feedbackType,
   onFeedbackRestartRequested,
   onFeedbackSent,
 }: FeedbackContentStepProps) {
+  const { theme } = useDarkMode();
   const [screenshot, setScreenshot] = useState<string | null>(null);
   const [comment, setComment] = useState('');
   const [isSendingFeedback, setIsSendingFeedback] = useState(false);
@@ -27,16 +33,24 @@ export function FeedbackContentStep({
   async function handleSubmitFeedback(event: FormEvent) {
     event.preventDefault();
     setIsSendingFeedback(true);
-    await api.post('/feedbacks', {
-      type: title,
-      comment,
-      screenshot,
-    });
+    try {
+      const response = await api.post('/feedbacks', {
+        type: title,
+        comment,
+        screenshot,
+      });
 
-    setComment('');
-    setScreenshot(null);
-    setIsSendingFeedback(false);
-    onFeedbackSent();
+      toast.success(response.data.message, { theme });
+
+      setComment('');
+      setScreenshot(null);
+      setIsSendingFeedback(false);
+      onFeedbackSent();
+    } catch (err) {
+      const error = err as AxiosError;
+      const { message } = error.response?.data as ErrorMessage;
+      toast.error(message as string, { theme });
+    }
   }
 
   return (
