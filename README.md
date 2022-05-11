@@ -3,7 +3,8 @@
     <a href="#project">Project</a> •
     <a href="#layout">Layout</a> •
     <a href="#getting-started">Getting started</a> •
-    <a href="#technologies">Technologies</a>
+    <a href="#technologies">Technologies</a> •
+    <a href="#extra-mile">Extra mile</a>
   </p>
 </section>
 
@@ -113,4 +114,24 @@ $ expo start
   <li><a href="https://nodemailer.com/about/">Nodemailer</a></li>
   <li><a href="https://jestjs.io/">Jest</a></li>
 </ul>
+
+<H2 id="extra-mile">Extra mile</H2>
+
+<h6>:globe_with_meridians: Web</h4>
+<ul>
+  <li>Add eslint, commitlint, husky and prettier</li>
+  <li>Fake homepage</li>
+  <li>Responsive menu</li>
+  <li>Dark/Light theme toggle</li>
+  <li>Toast</li>
+</ul>
+
+<h6>:desktop_computer: Server</h6>
+<ul>
+  <li>Error handling</li>
+  <li>Email html changes</li>
+</ul>
   
+
+
+
