@@ -38,7 +38,7 @@ export class SubmitFeedbackUseCase {
     await this.mailAdapter.sendMail({
       subject: 'Novo feedback',
       body: [
-          `<div style="background-position: center -120px; background-repeat:no-repeat; background-image:url(${__dirname}/src/assets/nlw_return.jpg)">`,
+          `<div style="background-position: center -120px; background-repeat:no-repeat; background-image:url(https://raw.githubusercontent.com/andersonrodolfo/feedget/main/.github/nlw_return.jpg)">`,
           `<div style="padding: 100px 0 0 0; max-width: 400px; margin: auto;">`,
           `<div style="background: #ffffff; padding: 30px 30px 30px 30px;">`,
           `<p style="color: #333333; font-family: Arial, sans-serif; font-size: 20px; margin: 0 0 16px 0;">`,
