@@ -41,7 +41,7 @@ export function DarkModeToggleSwitch({
               : 'translate-x-[1.8rem] opacity-100 rotate-0'
           }`}
         >
-          <SunDim className="w-5 h-5" color="#ffbb52" weight="fill" />
+          <SunDim className="w-5 h-5 animate-pulse" color="#ffbb52" weight="fill" />
         </div>
         <div
           className={`absolute transition-all duration-[500ms] ease-[cubic-bezier(.26,2,.46,.71)] w-5 h-5 rounded-full bg-[#ffeccf] left-1 top-0 bottom-0 m-auto shadow-[inset_0px_0px_0px_0.15em_#ffbb52] ${
@@ -56,7 +56,7 @@ export function DarkModeToggleSwitch({
               : 'translate-x-[1rem] opacity-0 -rotate-12'
           }`}
         >
-          <MoonStars className="w-5 h-5" color="#485367" weight="fill" />
+          <MoonStars className="w-5 h-5 animate-pulse" color="#485367" weight="fill" />
         </div>
       </div>
     </label>

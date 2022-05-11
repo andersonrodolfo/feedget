@@ -3,13 +3,13 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      // screens: {
-      //   '2xl': { max: '1535px' },
-      //   xl: { max: '1279px' },
-      //   lg: { max: '1023px' },
-      //   md: { max: '767px' },
-      //   sm: { max: '639px' },
-      // },
+      screens: {
+        'max-2xl': { max: '1535px' },
+        'max-xl': { max: '1279px' },
+        'max-lg': { max: '1023px' },
+        'max-md': { max: '767px' },
+        'max-sm': { max: '639px' },
+      },
       colors: {
         light: '#f6f6f5',
         dark: '#09090A',

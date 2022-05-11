@@ -6,7 +6,9 @@ export function App() {
   return (
     <div>
       <Header />
-      <Home />
+      <main className="max-md:mt-[120px]">
+        <Home />
+      </main>
     </div>
   );
 }
