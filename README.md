@@ -49,6 +49,7 @@ $ cd server
 # Install dependencies
 $ yarn
 
+# Change prisma provider on "./prisma/schema.prisma" from "postgresql" to "sqlite"
 # Run prisma migration
 $ yarn prisma migrate dev
 
