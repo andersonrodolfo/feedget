@@ -49,6 +49,9 @@ $ cd server
 # Install dependencies
 $ yarn
 
+# Run prisma migration
+$ yarn prisma migrate dev
+
 # Initialize the server
 $ yarn dev
 ```
